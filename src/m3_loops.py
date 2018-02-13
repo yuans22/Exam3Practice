@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Shuai Yuan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -109,6 +109,12 @@ def run_test_practice_problem3():
              st.SimpleTestCase(practice_problem3,
                                [0, 1, 1.414213562373],
                                [286602]),
+             st.SimpleTestCase(practice_problem3,
+                               [-1, 2, 3.3],
+                               [3, 0]),
+             st.SimpleTestCase(practice_problem3,
+                               [5, 3, 25],
+                               [-5, 0.2, 1]),
              ]
     # 14th test:
     big_list = []
@@ -134,6 +140,7 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ####################################################################
+
 
 
 def practice_problem3(start, n, threshold):
@@ -208,7 +215,7 @@ def practice_problem3(start, n, threshold):
       :type threshold: float
     """
     ####################################################################
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Some tests are already written for you (above),
     #          but you are required to write ADDITIONAL tests (above).
     ####################################################################
@@ -216,6 +223,22 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
+    new = []
+    if n == 0:
+        return new
+    if threshold > math.sqrt(2):
+        l = []
+        for k in range(start, start + n - 1):
+            l.append(k)
+        return l
+
+    while n > 0:
+        if (math.sin(start) + math.cos(start)) > threshold:
+            new.append(start)
+            n -= 1
+        start += 1
+    return new
+
 
 
 # ----------------------------------------------------------------------

@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  MUTATING  and  RETURNING-NEW  LISTS.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Shuai Yuan.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -82,6 +82,28 @@ def run_test_doubler():
     # ------------------------------------------------------------------
     # TO DO 2 (continued): Add your ADDITIONAL test(s) here:
     # ------------------------------------------------------------------
+    # Test 2:
+    arg3 = [20, 3, 2, 2]
+    arg4 = [5, 10, 18]
+    correct_arg3_after = [40, 6, 4, 4]
+    correct_arg4_after = [5, 10, 18]
+    expected = [10, 20, 36]
+
+    print()
+    print('BEFORE the function call:')
+    print('  Argument 1 is:', arg3)
+    print('  Argument 2 is:', arg4)
+
+    answer = doubler(arg3, arg4)
+
+    print('AFTER the function call:')
+    print('  Argument 1 is:       ', arg3)
+    print('  Argument 1 should be:', correct_arg3_after)
+    print('  Argument 2 is:       ', arg4)
+    print('  Argument 2 should be:', correct_arg4_after)
+    print('The returned value is:       ', answer)
+    print('The returned value should be:', expected)
+
 
 
 def doubler(list1, list2):
@@ -102,7 +124,7 @@ def doubler(list1, list2):
         :type list2: list of int
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -110,6 +132,12 @@ def doubler(list1, list2):
     #    DIFFICULTY:      4
     #    TIME ESTIMATE:   5 minutes.
     # ------------------------------------------------------------------
+    for k in range(len(list1)):
+        list1[k] *= 2
+    new = []
+    for k in range(len(list2)):
+        new.append(list2[k] * 2)
+    return new
 
 
 # ----------------------------------------------------------------------
